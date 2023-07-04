@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #c9f9ee;
+}
+.container{
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 0 15px;
+    position: fixed;
+    
+}
+a{
+    color: white;
+    text-decoration: none;
+    
+}
+.left-nav a{
+    text-decoration: none;
+    font-size: 35px;
+    color: red;
+    font-weight: bold;
+    
+}
+.middle-nav{
+    display: none;
+}
+.right-nav .nav-ul{
+    display: flex;
+
+}
+.nav-ul li{
+    display: block;
+}
+.nav-ul>li>a{
+    font-size: 18px;
+    padding: 9px 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    
+}
+.nav-ul>li>a:hover{
+    background-color: rgb(54, 54, 54);
+    border-radius: 5px;
+}
+.drop-menu{
+    position: absolute;
+    top: 75px;
+    width: 175px;
+    background-color: black;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+.drop-menu li{
+    width: 175px;
+    height: 50px;
+    text-align: center;
+    padding: 12px 15px;
+    
+}
+.drop-menu li:hover{
+    background-color: rgb(54, 54, 54);
+}
+.drop:hover .drop-menu{
+    visibility: visible;
+    opacity: 1;
+    top: 65px;
+}
+.mega-box{
+    width: 100%;
+    height: 280px;
+    position: absolute;
+    left: 0;
+    top: 75px;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    
+}
+.mega-box .content{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+
+}
+.bgImage{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdVryfA8aqQc_XyopPF2YIGDdZy-HPVEniGS_L313xHsKmX2-6lBy0iYS7D_2G3YAHoH4&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+header{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 0 15px 0;
+}
+
+.row{
+    height: 100%;
+    width: calc(100%/4);
+    background-color: black;
+    padding: 20px;
+    border-left: 1px solid rgb(0,0,20);
+}
+.row:nth-child(1),.row:nth-child(2){
+    border-left: none;
+}
+.mega-ul>li{
+    padding: 3px 5px;
+}
+.mega-ul>li>a{
+    font-size: 15px;
+}
+.mega-ul>li:hover{
+    background-color: rgb(54, 54, 54);
+    border-radius: 5px;
+}
+.mega:hover .mega-box{
+    top: 65px;
+    visibility: visible;
+}
