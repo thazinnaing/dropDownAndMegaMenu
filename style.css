@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-
 }
 body{
     width: 100%;
@@ -21,7 +20,6 @@ body{
     background-color: #000000;
     padding: 0 15px;
     position: fixed;
-    
 }
 a{
     color: white;
@@ -37,11 +35,25 @@ a{
     color: red;
 }
 .middle-nav{
+    display: flex;
+}
+.bar,.xmark{
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.xmark{
     display: none;
+}
+.fa-bars, .fa-xmark{
+    color: white;
+    font-size: 35px;
+    transition: all 0.5s ease;
+}
+.right-nav{
+    display: flex;
 }
 .right-nav .nav-ul{
     display: flex;
-
 }
 .nav-ul li{
     display: block;
@@ -51,19 +63,10 @@ a{
     padding: 9px 15px;
     font-weight: bold;
     transition: all 0.3s ease;
-    
 }
 .nav-ul>li>a:hover, .mega-ul>li:hover{
     background-color: rgb(54, 54, 54);
     border-radius: 5px;
-}
-.drop-menu{
-    position: absolute;
-    top: 75px;
-    width: 175px;
-    background-color: black;
-    visibility: hidden;
-    transition: all 0.2s ease;
 }
 .drop-menu li{
     width: 175px;
@@ -78,14 +81,10 @@ a{
 .drop:hover .drop-menu, .mega:hover .mega-box{
     visibility: visible;
     opacity: 1;
-    top: 65px;
+    /* top: 65px; */
 }
 .mega-box{
     width: 100%;
-    height: 280px;
-    position: absolute;
-    left: 0;
-    top: 75px;
     display: flex;
     justify-content: center;
     visibility: hidden;
@@ -99,8 +98,6 @@ a{
 
 }
 .bgImage{
-    width: 100%;
-    height: 100%;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdVryfA8aqQc_XyopPF2YIGDdZy-HPVEniGS_L313xHsKmX2-6lBy0iYS7D_2G3YAHoH4&usqp=CAU");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -113,11 +110,9 @@ header{
 }
 
 .row{
-    height: 100%;
-    width: calc(100%/4);
     background-color: black;
     padding: 20px;
-    border-left: 1px solid rgb(0,0,20);
+    border-left: 1px solid rgb(2, 2, 34);
 }
 .row:nth-child(1),.row:nth-child(2){
     border-left: none;
@@ -128,6 +123,130 @@ header{
 }
 .mega-ul>li>a{
     font-size: 15px;
+}
+.display{
+    display: none;
+}
+
+@media screen and (max-width: 840px){
+    .middle-nav{
+        padding-left: 20px;
+    }
+    .right-nav{
+        display: none;
+    }
+    .right-nav .nav-ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        background-color: black;
+        width: 40%;
+        height: 100vh;
+    }
+    .right-nav .nav-ul>li{
+        padding: 20px;
+    }
+    .drop-menu{
+        position: absolute;
+        visibility: hidden;
+        margin-top: 10px;
+    }
+    .drop-menu>li{
+        padding: 10px;
+        width: 85%;
+        margin-left: 30px;
+    }
+    .drop-menu>li:hover{
+        border-radius: 5px;
+    }
+    .drop:hover .drop-menu{
+        position: static;
+        visibility: visible;
+    }
+    .mega-box{
+        position: absolute;
+        visibility: hidden;
+    }
+    .mega-box .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 85%;
+        margin-left: 30px;
+        margin-top: 10px;
+        height: 100%;
+        overflow-y: auto;
+    }
+    .row{
+        width: 100%;
+        padding: 10px;
+    }
+    .bgImage{
+        width: 100%;
+        height: 100px;
+    }
+    .mega:hover .mega-box{
+        position: static;
+        visibility: visible;
+    }
+}
+
+@media screen and (min-width: 840px){
+    .middle-nav{
+        display: none;
+    }
+    .right-nav{
+        display: flex;
+    }
+    .right-nav .nav-ul{
+        display: flex;
+    }
+    .drop-menu{
+        position: absolute;
+        width: 175px;
+        top: 75px;
+        background-color: black;
+        visibility: hidden;
+        transition: all 0.2s ease;
+    }
+    .drop-menu li{
+        width: 175px;
+        height: 50px;
+        padding: 12px 15px;
+        
+    }
+    .drop:hover .drop-menu, .mega:hover .mega-box{
+        visibility: visible;
+        opacity: 1;
+        top: 65px;
+    }
+    .mega-box{
+        width: 100%;
+        height: 280px;
+        position: absolute;
+        left: 0;
+        top: 75px;
+        display: flex;
+        justify-content: center;
+        visibility: hidden;
+        
+    }
+    .mega-box .content{
+        width: 95%;
+        display: flex;
+        justify-content: center;
+    
+    }
+    .bgImage{
+        width: 100%;
+        height: 100%;
+    }
+    .row{
+        height: 100%;
+        width: calc(100%/4);
+    }
 }
 
 
