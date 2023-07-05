@@ -35,7 +35,7 @@ a{
     color: red;
 }
 .middle-nav{
-    display: flex;
+    display: none;
 }
 .bar,.xmark{
     cursor: pointer;
@@ -68,6 +68,14 @@ a{
     background-color: rgb(54, 54, 54);
     border-radius: 5px;
 }
+.drop-menu{
+    position: absolute;
+    width: 175px;
+    top: 75px;
+    background-color: black;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
 .drop-menu li{
     width: 175px;
     height: 50px;
@@ -81,10 +89,14 @@ a{
 .drop:hover .drop-menu, .mega:hover .mega-box{
     visibility: visible;
     opacity: 1;
-    /* top: 65px; */
+    top: 65px;
 }
 .mega-box{
     width: 100%;
+    height: 280px;
+    position: absolute;
+    left: 0;
+    top: 75px;
     display: flex;
     justify-content: center;
     visibility: hidden;
@@ -98,6 +110,8 @@ a{
 
 }
 .bgImage{
+    width: 100%;
+    height: 100%;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdVryfA8aqQc_XyopPF2YIGDdZy-HPVEniGS_L313xHsKmX2-6lBy0iYS7D_2G3YAHoH4&usqp=CAU");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -110,6 +124,8 @@ header{
 }
 
 .row{
+    height: 100%;
+    width: calc(100%/4);
     background-color: black;
     padding: 20px;
     border-left: 1px solid rgb(2, 2, 34);
@@ -124,12 +140,10 @@ header{
 .mega-ul>li>a{
     font-size: 15px;
 }
-.display{
-    display: none;
-}
 
 @media screen and (max-width: 840px){
     .middle-nav{
+        display: flex;
         padding-left: 20px;
     }
     .right-nav{
@@ -192,61 +206,3 @@ header{
         visibility: visible;
     }
 }
-
-@media screen and (min-width: 840px){
-    .middle-nav{
-        display: none;
-    }
-    .right-nav{
-        display: flex;
-    }
-    .right-nav .nav-ul{
-        display: flex;
-    }
-    .drop-menu{
-        position: absolute;
-        width: 175px;
-        top: 75px;
-        background-color: black;
-        visibility: hidden;
-        transition: all 0.2s ease;
-    }
-    .drop-menu li{
-        width: 175px;
-        height: 50px;
-        padding: 12px 15px;
-        
-    }
-    .drop:hover .drop-menu, .mega:hover .mega-box{
-        visibility: visible;
-        opacity: 1;
-        top: 65px;
-    }
-    .mega-box{
-        width: 100%;
-        height: 280px;
-        position: absolute;
-        left: 0;
-        top: 75px;
-        display: flex;
-        justify-content: center;
-        visibility: hidden;
-        
-    }
-    .mega-box .content{
-        width: 95%;
-        display: flex;
-        justify-content: center;
-    
-    }
-    .bgImage{
-        width: 100%;
-        height: 100%;
-    }
-    .row{
-        height: 100%;
-        width: calc(100%/4);
-    }
-}
-
-
