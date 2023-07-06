@@ -32,16 +32,16 @@ const xmark=document.getElementsByClassName("xmark")[0];
 bar.addEventListener("click", ()=>{
     bar.style.display="none";
     xmark.style.display="block";
-    leftNav.style.display="none";
-    rightNav.style.display="flex";
+    rightNav.style.right="0px";
+    
 
 
 })
 xmark.addEventListener("click", ()=>{
     xmark.style.display="none";
     bar.style.display="block";
-    leftNav.style.display="flex";
-    rightNav.style.display="none";
+    rightNav.style.right="-100%";
+    
 })
 
 
